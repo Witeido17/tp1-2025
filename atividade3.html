@@ -1,0 +1,36 @@
+
+
+<script>
+let lista = []
+for (i = 0 ; i < 10 ; i++) {
+    x = prompt("Digite o " + (i + 1) +" elemento do vetor")
+    lista.push(x)
+}
+lista.sort()
+alert("vetor é " + lista)
+</script>
+
+
+<script>
+let nomes = []
+let idades = []
+for (let i = 0; i < 7; i++){
+    let nome = prompt("Digite o " + (i + 1) + " nome")
+    let idade = prompt("Digite o " + (i + 1) + " idades")
+    nomes.push(nome)
+    idades.push(idade)
+
+}
+for (let i = 0; i < 7; i++){
+if ((idades[1] >= 16) && (idades[i]) <= 18){
+    alert(nomes[i] + " tem " + idades[i] + " anos. voto facultativo.")
+} else if ((idades[i] >= 18) && (idades[i] < 70)){
+    alert(nomes[i] + " tem " + idades[i] + " anos. voto obrigatório.")
+} else if ((idades[i] > 70)){
+    alert(nomes[i] + " tem " + idades[i] + "anos. voto facultativo.")
+} else {
+    alert(nomes[i] + " é menor de idade. Não vota.")
+}
+
+}
+</script>
