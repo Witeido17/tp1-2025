@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <script>
+saldo = prompt("Informe o saldo na conta bancária") - 0
+while(Number.isNaN(saldo) || saldo <= 0) {
+    alert("você digitou um valor invalido");
+    saldo = prompt("Informe o saldo na conta bancária") - 0
+}
+
+taxa = prompt("Informe a taxa de rendimento do investimento") - 0
+while(Number.isNaN(taxa) || taxa <= 0) {
+    alert("você digitou um valor invalido");
+    taxa = prompt("Informe a taxa de rendimento do investimento") - 0
+}
+meses = prompt("Informe a quantidade de meses da aplicação") - 0
+while(Number.isNaN(meses) || meses <= 0) {
+    alert("você digitou um valor invalido");
+    meses = prompt("Informe a quantidade de meses da aplicação") - 0
+}
+
+for(i = 0; i < meses;i++){
+    temp = saldo * (taxa/100);
+    alert(`No ${i+1}º mês a aplicação rendeu ${temp} e o total aplicado passou a ser ${temp+saldo}`)
+    saldo += temp
+}
+alert("Esse foi seu saldo " + saldo)
+    </script>
+</html>
