@@ -1,21 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img{
+            width: 100%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="1" src="https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABSKE1GtvRzps2ZKQsfVn1fPU-BejK67ccgzcGYMKBwnH312ahQEnLuAoOtqlFp0FDWqgHtvVEzpwC2U1ZxmuBryhnsiYePAmxcge.jpg?r=332" style="display: none;">
+    <img id ="2" src="https://www.adrenaline.com.br/wp-content/uploads/2025/06/Sonic-Adventure-Remake-Remaster-SEGA.jpg" style="display: none;">
+    <img id="3" src="https://i.pinimg.com/736x/8f/0c/81/8f0c8139d840dc28c0cbf745e4409e17.jpg" style="display: none;">
+    <input type="button" onclick=trocarImagem() id="Botao" value="trocar imagem" >
+</body>
 <script>
-    for (let i = 1; i <= 10; i++){
-        alert(i)
+    function trocarImagem(){
+        const img1 = document.getElementById('1');
+        const img2 = document.getElementById('2');
+        const img3 = document.getElementById('3');
+
+        const images = [img1, img2, img3];
+        images.forEach(img => img.style.display = 'none');
+        const random = Math.floor(Math.random() * images.length);
+
+        images[random].style.display = 'block';
     }
 </script>
 
-<script>
-x = prompt("Digite um numero") - 0;
-for (let i = 1; i <= 10; i++){
-    alert(x + " x " + i + " = " + x*i);
-
-}
-</script>
-
-<script>
-y = prompt("Digite um número")
-for (let i = 1; i <= y; i++){
-   if (i%2 == 0) alert(i);
-}
-</script>
+</html>
