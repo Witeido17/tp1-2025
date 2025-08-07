@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+<input type="number" name="n1" id="n1" placeholder="Numero1"> 
+<input type="number" name="n2" id="n2" placeholder="Numero2"><br>
+<button id="soma">Somar</button>
+<button id="sub">Subtrair</button>
+<button id="mult">Multiplicar</button>
+<button id="div">Dividir</button>
+<button id="limp">Limpar</button>
+<h1 id="res">Resultado: </h1>
+<h2>Histórico:</h2>
+<ul id="historico"></ul>
+</body>
+<script>
+function adicionarhistorico(n1,n2,operacao, Resultado){
+    let itemhistorico = document.createElement("li")
+    itemhistorico.innerText = n1+ operacao +n2+ " = " + Resultado;
+    document.getElementById("historico").appendChild(itemhistorico);
+
+}
+const Soma = document.getElementById("soma")
+const Subtrair = document.getElementById("sub")
+const Multiplicar = document.getElementById("mult")
+const Dividir = document.getElementById("div")
+const Resultado = document.getElementById("res")
+const Limpar = document.getElementById("limp")
+
+Soma.addEventListener("click" , () =>{
+    const r1 = document.getElementById('n1').value
+    const r2 = document.getElementById('n2').value
+    let ressoma = parseFloat(r1) + parseFloat(r2);
+    res.innerHTML =  "Resultado: " + ressoma
+    adicionarhistorico(r1,r2,"+", ressoma)
+
+})
+
+Subtrair.addEventListener("click" , () =>{
+    const r1 = document.getElementById('n1').value
+    const r2 = document.getElementById('n2').value
+    let ressub = parseFloat(r1) - parseFloat(r2);
+    res.innerHTML =  "Resultado: " + ressub
+    adicionarhistorico(r1,r2,"-", ressub)
+
+})
+
+Multiplicar.addEventListener("click" , () =>{
+    const r1 = document.getElementById('n1').value
+    const r2 = document.getElementById('n2').value
+    let resmult = parseFloat(r1) * parseFloat(r2);
+    res.innerHTML =  "Resultado: " + resmult
+    adicionarhistorico(r1,r2,"*", resmult)
+
+})
+
+Dividir.addEventListener("click" , () =>{
+    const r1 = document.getElementById('n1').value
+    const r2 = document.getElementById('n2').value
+    let resdiv = parseFloat(r1) / parseFloat(r2);
+    res.innerHTML =  "Resultado: " + resdiv
+    adicionarhistorico(r1,r2,"/", resdiv)
+
+})
+Limpar.addEventListener("click", ()=>{
+     document.getElementById('n1').value = " "
+     document.getElementById('n2').value = " "
+     res.innerHTML = "Resultado: "
+})
+</script>
+</html>
