@@ -1,13 +1,29 @@
-const port = 8000;
-const http = require('http');
 
-server = http.createServer((req, res) => {
-    res.writeHead(200, {
-        "Content-Type": "text/html"
-    });
-    res.write(`A data de hoje é ${new Date().toString()}`);
-    res.end();
-})
+const express = require('express');
 
-server.listen(port);
-console.log(`Servidor funcionando na porta: ${port}`);
+const app = express();
+
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Página inicial');
+});
+
+app.get('/sobre', (req, res) => {
+  res.send('Servidor criado com Express!');
+});
+
+app.get('/hora', (req, res) => {
+  const horaAtual = new Date().toLocaleTimeString(); 
+  res.send(`Hora atual do servidor: ${horaAtual}`);
+});
+
+app.get('/saudacao/:nome', (req, res) => {
+ 
+  const nome = req.params.nome;
+  res.send(`Olá, ${nome}!`);
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
